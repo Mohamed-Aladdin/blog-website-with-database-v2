@@ -1,0 +1,14 @@
+<%- include("partials/header"); -%>
+
+<% posts.forEach(post => { %>
+
+  <h1><%= post.title %></h1>
+
+  <% if (post.title === "Home") { %>
+    <p><%= post.article %></p>
+  <% } else { %>
+    <p><%= `${post.article.substr(0, 100)}...` %><a href="/posts/<%=post._id%>">Read More</a></p>
+  <% } %>
+<% }) %>
+
+<%- include("partials/footer"); -%>
